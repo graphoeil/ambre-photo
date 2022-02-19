@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/* CSS Document */
+@import url(reset.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+/* /////////////////////////////// */
+/*               BODY              */
+/* /////////////////////////////// */
+body,html{ -webkit-overflow-scrolling: touch; -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; }
+*{ box-sizing: border-box; text-decoration: none; outline: none; }
+
+/* /////////////////////////////// */
+/*          TYPOS & COULEURS       */
+/* /////////////////////////////// */
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Merriweather', serif;
+gris ultra clair : f9f9f9
+gris très clair : ccc
+gris clair : 666
+gris foncé : 444
+rouge : c0392b
+*/
+
+/* /////////////////////////////// */
+/*              HEADER             */
+/* /////////////////////////////// */
+header{ padding: 30px; }
+header h1{ font-family: 'Lato', sans-serif; font-size: 28px; text-align: center; text-transform: uppercase; color: #444; letter-spacing: 7px; }
+header h1 b{ color: #c0392b; }
+
+/* /////////////////////////////// */
+/*            NAVIGATION           */
+/* /////////////////////////////// */
+.btnMenuMobile{ padding: 14px; font-family: 'Lato', sans-serif; font-size: 11px; text-align: center; text-transform: uppercase; letter-spacing: 3px; 
+	border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; color: #444; transition: 0.35s background-color ease-in-out; }
+.btnMenuMobile.fondBlanc{ background-color: white; }
+.btnMenuMobile.fondGris{ background-color: #f9f9f9; }
+.btnMenuMobile i{ padding: 0 10px 0 0; width: 25px; }
+nav{ display: none; width: 100%; max-width: 1366px; margin: auto; background-color: white; font-family: 'Merriweather', serif; z-index: 99; }
+nav ul li{ display: block; position: relative; text-align: left; }
+nav ul li a{ display: block; padding: 20px; color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; }
+nav ul li button{ display: block; width: 100%; padding: 20px; color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 3px;
+	border: none; background-color: white; font-family: 'Merriweather', serif; text-align: left; }
+nav ul li button.active, nav ul li a.active{ color: #c0392b; font-weight: 700; }
+.subMenuIcone{ display: inline-block; position: absolute; top: 17px; right: 10px; color: #666; transition: 0.35s transform ease-in-out; }
+.subMenuIcone.tourne{ transform: rotate(180deg); }
+.subLevelMenu{ display: none; }
+.subLevelMenu li{ background-color: #f9f9f9; text-align: center; border-bottom: 1px solid #ccc; }
+.subLevelMenu li:last-child{ border-bottom: none; }
+
+/* /////////////////////////////// */
+/*              GALERIE            */
+/* /////////////////////////////// */
+.galerie{ display: -ms-flexbox; display: -webkit-flex; display: flex;
+    -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row;
+    -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;
+    -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start;
+    -webkit-align-content: flex-start; -ms-flex-line-pack: start; align-content: flex-start;
+    -webkit-align-items: flex-start; -ms-flex-align: start; align-items: flex-start;
+	max-width: 1440px; margin: 10px; }
+.galerieVisuel{ position: relative; width: 50%; padding: 10px; background-color: white; overflow: hidden; cursor: pointer; opacity: 0; }
+.galerieVisuel.visible{ opacity: 1; }
+.conteneurVisuel{ position: relative; width: 100%; }
+.conteneurPhoto{ position: relative; width: 100%; overflow: hidden; }
+.conteneurPhoto img{ display: block; width: 101%; object-fit: cover; }
+.conteneurPhoto span{ display: block; position: absolute; left: 0; bottom: 0; width: 100%; padding: 5px; background-color: #c0392b; 
+	color: white; text-transform: uppercase; text-align: center; font-family: 'Lato', sans-serif; font-size: 10px; z-index: 2; }
+/* Trait blanc, after (après tout le contenu de conteneur visuel, donc au-dessus) */
+.conteneurVisuel::after{ content: ''; display: block; position: absolute; top: 10px; right: 10px; bottom: 40px; left: 10px; border: 1px solid white;
+	transform: scale(0.9); opacity: 1; }
+
+/* /////////////////////////////// */
+/*             LIGHTBOX            */
+/* /////////////////////////////// */
+.lightBox{ display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: white; cursor: zoom-out; z-index: 999; }
+.innerLightBox{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.innerLightBox img{ display: block; width: 100%; height: 100%; object-fit: contain; }
+.innerLightBox span{ display: block; position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background-color: #c0392b; 
+	font-family: 'Lato', sans-serif; font-size: 14px; text-align: center; text-transform: uppercase; color: white; }
+
+/* /////////////////////////////// */
+/*              FOOTER             */
+/* /////////////////////////////// */
+footer{ padding: 10px; margin: 30px 0 0 0; background-color: #c0392b; color: white; font-family: 'Lato', sans-serif; 
+	font-size: 12px; text-align: center; text-transform: uppercase; }
+footer b{ font-weight: 700; }
+
+/* /////////////////////////////// */
+/*     >= 375px | iPhone 6,7,8     */
+/* /////////////////////////////// */
+@media only screen and (min-width: 375px) and (orientation: landscape){}
+@media only screen and (min-width: 375px) and (orientation: portrait){}
+
+/* /////////////////////////////// */
+/*     >= 768px | iPad portrait    */
+/* /////////////////////////////// */
+@media only screen and (min-width: 768px){
+	/* Header */
+	header h1{ font-size: 32px; letter-spacing: 10px; }
+	/* Navigation */
+	.btnMenuMobile, .subMenuIcone{ display: none; }
+	nav{ display: block; }
+	ul.topLevelMenu{ display: -ms-flexbox; display: -webkit-flex; display: flex;
+		-webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row;
+		-webkit-flex-wrap: nowrap; -ms-flex-wrap: nowrap; flex-wrap: nowrap;
+		-webkit-justify-content: center; -ms-flex-pack: center; justify-content: center;
+		-webkit-align-content: center; -ms-flex-line-pack: center; align-content: center;
+		-webkit-align-items: center; -ms-flex-align: center; align-items: center; 
+		width: 100%; }
+	ul.topLevelMenu > li{ display: inline-block; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; 
+		flex: 1 1 auto; text-align: center; }
+	.ssFamilleBtn{ text-align: center; }
+	/* ul.subLevelMenu passe en absolute ainsi qu'en largeur 100% ce qui lui donne la même taille
+	que son li parent qui est en flex: 1 1 auto; */
+	ul.subLevelMenu{ position: absolute; width: 100%; z-index: 99; }
+	ul.subLevelMenu li:first-child{ border-top-left-radius: 10px; border-top-right-radius: 10px; }
+	ul.subLevelMenu li:last-child{ border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
+	/* Galerie */
+	.galerieVisuel span{ font-size: 12px; padding: 10px; }
+}
+
+/* /////////////////////////////// */
+/*     >= 1024px | iPad paysage    */
+/* /////////////////////////////// */
+@media only screen and (min-width: 1024px){
+	/* Galerie */
+	.galerieVisuel{ width: 33.33%; }
+}
+
+/* /////////////////////////////// */
+/*  >= 1366px | iPadPro & Laptop   */
+/* /////////////////////////////// */
+@media only screen and (min-width: 1366px){
+	/* Header */
+	html.no-touchevents ul.topLevelMenu > li > a, 
+		html.no-touchevents ul.topLevelMenu > li > button{ transition: 0.35s color ease-in-out; }
+	html.no-touchevents ul.topLevelMenu > li:hover > a, 
+		html.no-touchevents ul.topLevelMenu > li:hover > button{ color: #c0392b; }
+	html.no-touchevents ul.subLevelMenu li{ transition: 0.35s background-color ease-in-out; }
+	html.no-touchevents ul.subLevelMenu li:hover{ background-color: #e5e5e5; }
+	/* Galerie */
+	.galerie{ margin: 10px auto; }
+	.galerieVisuel{ width: 25%; }
+	/* Galerie => photo en n&b */
+	html.no-touchevents .galerieVisuel img{ -webkit-filter: grayscale(1); filter: grayscale(1); transition: 0.5s filter ease-in-out; }
+	html.no-touchevents .galerieVisuel:hover img{ -webkit-filter: grayscale(0); filter: grayscale(0); }
+	/* Galerie => ombre sous la photo, before (avant tout le reste) */
+	html.no-touchevents .conteneurVisuel::before{ content:''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+		box-shadow: 0 3px 10px rgba(0,0,0,0); transition: 0.35s box-shadow ease-in-out; }
+	html.no-touchevents .conteneurVisuel:hover::before{ box-shadow: 0 3px 10px rgba(0,0,0,0.7); }
+	/* Galerie => trait blanc */
+	html.no-touchevents .conteneurVisuel::after{ transform: scale(0.8); opacity: 0; transition: 0.35s transform ease-in-out, 0.35s opacity ease-in-out; }
+	html.no-touchevents .conteneurVisuel:hover::after{ transform: scale(0.9); opacity: 1; }
+	/* Galerie => légende */
+	html.no-touchevents .conteneurVisuel span{ background-color: #999; transition: 0.35s background-color ease-in-out; }
+	html.no-touchevents .conteneurVisuel:hover span{ background-color: #c0392b; }
+}
